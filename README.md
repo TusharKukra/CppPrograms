@@ -1,1 +1,1 @@
-# PatternProblemsInC
+# Pattern Problems in C
