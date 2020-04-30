@@ -1,1 +1,1 @@
-# Pattern Problems in C
+# Pattern Programs in C
