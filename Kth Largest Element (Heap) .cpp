@@ -7,13 +7,13 @@ int main() {
 	int a[] = {7,10,4,3,20,15};
 	int size = sizeof(a)/sizeof(a[0]), k=3;
 
-	priority_queue <int, vector <int>, greater <int>> maxHeap ; //Min Heap for Largest Element
+	priority_queue <int, vector <int>, greater <int>> minHeap ; //Min Heap for Largest Element
 	for(int i=0;i<size;i++){
-		maxHeap.push(a[i]);
-		if(maxHeap.size()>k){
-			maxHeap.pop();
+		minHeap.push(a[i]);
+		if(minHeap.size()>k){
+			minHeap.pop();
 		}
 	}
-	cout<<maxHeap.top();
+	cout<<minHeap.top();
 	return 0;
 }
