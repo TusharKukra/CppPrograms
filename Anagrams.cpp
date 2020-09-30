@@ -1,5 +1,5 @@
-#include<iostream>
-#include<cstring>
+#include<bits/stdc++.h>
+
 using namespace std;
 int main()
 { char str1[20],str2[20];
