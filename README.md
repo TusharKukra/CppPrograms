@@ -8,6 +8,5 @@ A Repo for Competitive Programing Questions and their solution in c++.
     
  ## Contributing
  
-Anyone can contribute 
-    
+Anyone can contribute in this repo
    
