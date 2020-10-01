@@ -3,7 +3,7 @@
 
 int main()
 {
-    int n, result=0, q,t, remainder;
+    int n, result=0, q,t, rem;
     printf("Enter any Number to Check for Palindrome: ");
     scanf("%d", &n);
 
@@ -11,8 +11,8 @@ int main()
 
     while(q != 0)
     {
-        remainder = q%10;
-        result = result*10 + remainder;
+        rem = q%10;
+        result = result*10 + rem;
         q =q/10;
 
     }
