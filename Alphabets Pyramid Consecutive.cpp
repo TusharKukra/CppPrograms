@@ -4,13 +4,13 @@ using namespace std;
 
 int main(){
 
-int i,j,n;
+int i,j,r;
 char ch = 'A';
 
-cout<<"Enter number of Lines: ";
-cin>>n;
+cout<<"Enter number of rows: ";
+cin>>r;
 
-for(i=1;i<n+1;i++){
+for(i=1;i<r+1;i++){
 
     
 
