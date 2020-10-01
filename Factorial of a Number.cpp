@@ -17,7 +17,7 @@ int n,r;
 cout<<"Enter any number: ";
 cin>>n;
 r=fact(n);
-cout<<"Factorial: "<<r;
+cout<<"Factorial of the given number: "<<r;
 return 0;
 }
 
