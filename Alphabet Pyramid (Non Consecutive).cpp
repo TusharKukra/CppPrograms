@@ -7,7 +7,7 @@ int main(){
 int i,j,n;
 char ch = 'A';
 
-cout<<"Enter number of Lines: ";
+cout<<"Enter total no. of Lines: ";
 cin>>n;
 
 for(i=1;i<n+1;i++){
