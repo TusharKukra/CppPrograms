@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-     int n,i,j;
+     int n;
      cin>>n;
      int a[n], cumSum[n]={0};
      int currentSum=0, maximumSum=0, left=-1,right=-1;
@@ -47,7 +47,7 @@ int main(){
      cout<<"Maximum Sum : "<<maximumSum<<endl;
 
      //Printing Subarray
-     for(int k=i;k<=j;k++){
+     for(int k=left;k<=right;k++){
           cout<<a[k]<<" ";
      }
 
