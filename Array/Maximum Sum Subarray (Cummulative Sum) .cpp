@@ -2,6 +2,8 @@
 using namespace std;
 
 // Maximum Subarray Sum using Cummulative Sum Method
+// Time Complexity : O(n^2)
+
 
 int main(){
 
