@@ -35,3 +35,10 @@ int main() {
     stairCaseSearch(arr,4,12);
 	return 0;
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+// Method -3 (by using comparison - efficient method (starting from the rightmost element)
