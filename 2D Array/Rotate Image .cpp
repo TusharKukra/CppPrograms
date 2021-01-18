@@ -35,6 +35,26 @@ void rotateWithoutSTL(int a[][1000], int n){
 }
 
 
+//using STL
+void rotateWithSTL (int a[][1000], int n){
+
+    //same thing as above (reverse every rows) using reverse(starting_container, end_container) method
+    for(int i=0;i<n;i++){
+        reverse(a[i],a[i]+n);   //a[i] is the row pointer
+    }
+
+    //Transpose
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+
+            if(i<j){
+            swap(a[i][j] , a[j][i]);
+            }
+        }
+    }
+
+}
+
 int main(){
 
     int a[1000][1000];
@@ -49,6 +69,8 @@ int main(){
     }
 
     rotateWithoutSTL(a,n);
+    
+    //rotateWithSTL(a,n);
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
