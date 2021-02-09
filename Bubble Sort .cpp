@@ -1,3 +1,5 @@
+// Quick Sort is one of the best Sorting Method
+
 #include<bits/stdc++.h>
 
 using namespace std;
