@@ -86,6 +86,7 @@ void prCharWithFreq(string s)
 // Driver Code
 int main()
 {
-  string s="geeksforgeeks";
+  string str ;
+  getline(cin,str);
   prCharWithFreq(s);
 }
