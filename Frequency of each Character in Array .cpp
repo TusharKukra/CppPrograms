@@ -43,7 +43,8 @@ void printCharWithFreq(string str)
  
 int main()
 {
-    string str = "geeksforgeeks";
+    string str ;
+    getline(cin,str);
     printCharWithFreq(str);
     return 0;
 }
