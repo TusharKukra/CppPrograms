@@ -108,3 +108,95 @@ int main() {
 	
 	return 0;
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Linked List Programs
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+public:
+    int data;
+    node* next;
+
+    node(int d){
+        data = d;
+        next = NULL;
+    }
+};
+
+//Insert Element in End
+void insertEnd(node* &head, int d){
+    
+    node* n = new node(d);  // create a new node
+
+    // now see where u can place this node
+    if(head == NULL){
+        head = n;
+    }
+    else{
+        node* temp = head;  // make a temp pointer
+        // then traverse it till end of LL 
+        while(temp -> next != NULL){  // till our temp pointer reaches end 
+            // move 1 step ahead
+            temp= temp->next;
+        }
+
+        // if it reaches end of the LL it moves out of the loop
+        temp->next = n;
+    }
+}
+
+
+//MIDDLE NODE in LL
+node* middleNode(node* head){   // here we need to return the address (as the node is created dynamically) so we use node*
+
+    if(head==NULL || head->next == NULL){
+        return head;
+    }
+
+    node* slow = head;
+    node* fast = head->next;
+
+    while(fast->next != NULL && fast != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    return slow;
+
+}
+
+// Print the Node
+void Print(node* head){
+    while(head!=NULL){
+        cout<<head->data<<" --> ";
+        head = head->next;
+    }
+    cout<<"NULL"<<endl;
+}
+
+
+int main(){
+
+    node* head;
+    head = NULL;
+
+    insertEnd(head,1);
+    insertEnd(head,2);
+    insertEnd(head,3);
+    insertEnd(head,4);
+    insertEnd(head,5);
+    insertEnd(head,6);
+    Print(head);
+
+    node* middle = middleNode(head);
+
+    cout<<"Middle Element : "<< middle->data <<endl;  // here we use middle->data bcoz it will print the value of the element
+    // if we use just middle in place of middle->data then it will print the address of the element.
+ 
+    return 0;
+}
