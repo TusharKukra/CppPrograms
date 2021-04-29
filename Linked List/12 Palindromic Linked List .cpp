@@ -17,18 +17,18 @@ public:
 };
 
 // inserting at Front
-void insertAtFront(node* &head, int d){  // call by reference
-    
-    node* n = new node(d); // new node dynamically
+void insertAtEnd(node* &head, int d){
+    node* n = new node(d);
 
-    // if the LL is empty
-    if(head == NULL){
+    if(head==NULL){
         head = n;
     }
     else{
-        // if we have a LL
-        n -> next = head;
-        head = n;
+        node* temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = n;
     }
 }
 
@@ -64,19 +64,6 @@ void Print(node* head){
     }
     cout<<"NULL"<<endl;
 }
-
-// finding middle of the linked list
-/* node* MidOfLL(node* head){
-    node* slow = head;
-    node* fast = head;
-
-    while(fast!=NULL && fast->next!=NULL){
-        slow = slow->next; // move slow 1 step
-        fast = fast->next->next; // move fast 2 step forward
-    }
-    return slow;
-} */
-//////////////////////////////////////////////////////////////////////////////////////////
 
 // palindrome
 bool isPalindrome(node* head){
@@ -119,24 +106,21 @@ int main(){
 
     head =  NULL;
 
-    insertAtFront(head, 1);
-    insertAtFront(head, 2);
-    insertAtFront(head, 2);
-    insertAtFront(head, 1);
+    int n;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		int d;
+		cin>>d;
+		insertAtEnd(head,d);
+	}
 
-    Print(head);
-    cout<<endl;
-
-    node* newHead = ReverseLinkedList(head);
-    Print(newHead);
-
-    int result = isPalindrome(newHead);
+    int result = isPalindrome(head);
 
     if(result == 1){
-        cout<<"LL is Palindrome"<<endl;
+        cout<<"true"<<endl;
     }
     else{
-        cout<<"LL is not a Palindrome"<<endl;
+        cout<<"false"<<endl;
     }
 
     
