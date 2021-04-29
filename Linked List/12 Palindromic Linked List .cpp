@@ -16,7 +16,7 @@ public:
 
 };
 
-// inserting at Front
+// inserting at End
 void insertAtEnd(node* &head, int d){
     node* n = new node(d);
 
