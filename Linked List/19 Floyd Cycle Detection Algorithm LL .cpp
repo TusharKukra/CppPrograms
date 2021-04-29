@@ -82,6 +82,27 @@ void CreateCycle(node* head){
     temp->next = head->next->next;
 }
 
+// if cycle is present , then break the cycle function 
+void BreakTheCycle(node* head, node* fast){
+    // here we take fast as a parameter , bcoz we will stop when cycle is there, so cycle is there when both ptr are equal so we can take any of them
+
+    // make new pointer : previous and previous is placed 1 step behind the fast ptr
+    node* slow = head;
+    node* previous = head;
+
+    while(previous->next != fast){
+        previous = previous->next;
+    }
+
+    while(fast != slow){
+        previous = fast;
+        fast = fast->next;
+        slow = slow->next;
+    }
+    previous->next  = NULL;
+}
+
+
 // now create a fxn to check cycle
 bool isCycle(node* head){
     // create 2 pointers slow and fast
@@ -94,12 +115,15 @@ bool isCycle(node* head){
 
         // if our both pointer meets at some point of time: then our LL is Cyclic
         if(slow == fast){
+            BreakTheCycle(head,fast);
             return true;
         }
     }
 
     return false;
 }
+
+
 
 int main(){
 
@@ -125,5 +149,7 @@ int main(){
         cout<<"Cycle is not present"<<endl;
     }
 
+    // we can print the LL after breaking the cycle:
+    Print(head);
     return 0;
 }
