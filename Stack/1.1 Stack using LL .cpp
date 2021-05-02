@@ -116,17 +116,17 @@ int main(){
     push(2);
     push(3);
     push(4);
-    cout<<endl;
     display();
 
+    cout<<endl;
     cout<<"Top element : "<<peek()<<endl;
 
     pop();
     pop();
-    cout<<endl;
     display();
-    
-    cout<<"After popping 2 elements from Stack , top element : "<<peek()<<endl;
+
+    cout<<endl;
+    cout<<"After popping 2 elements from Stack, top element : "<<peek()<<endl;
 
     return 0;
 }
