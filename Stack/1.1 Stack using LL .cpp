@@ -130,3 +130,92 @@ int main(){
 
     return 0;
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Method -2
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// Stack using Linked List
+
+class node{
+
+public:
+    int data;
+    node* next;
+
+    node(int d){
+        data = d;
+        next = NULL;
+    }
+};
+
+class Stack{
+    public:
+
+        node* head;
+        int cs;
+        Stack(){  // Constructor
+            head = NULL;
+            cs = 0;
+        }
+
+        void push(int x){
+            // same as insert at front
+        
+            node* temp = new node(x);// create a node
+            if(head == NULL){
+                head = temp;
+            }
+            else{
+                temp->next = head;
+                head = temp;
+                cs++;
+            }
+        }
+
+        void pop(){
+            // same as delete at front
+
+            if(head == NULL){
+                return ;
+            }
+            node* temp = head; 
+            head = head->next;
+            delete temp;
+        }
+
+        int top(){
+            return head->data;
+        }
+
+        bool empty(){
+            return head==NULL ? true : false;
+        }
+
+        int size(){
+             return cs;
+        }
+};
+
+int main(){
+
+    Stack s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+
+    s.pop();
+
+    while(!s.empty()){
+        cout<<s.top()<<endl;
+        s.pop();
+    }
+
+    return 0;
+
+}
