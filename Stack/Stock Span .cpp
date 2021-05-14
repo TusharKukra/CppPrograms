@@ -32,7 +32,7 @@ int main(){
             stack.pop();
         }
 
-        out[i] = stack.empty() ? i+1 : i-stack.top();
+        out[i] = stack.empty() ? i-(-1) : i-stack.top();
         stack.push(i);
     }
 
