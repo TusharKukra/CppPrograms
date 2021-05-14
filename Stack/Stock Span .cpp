@@ -26,13 +26,26 @@ int main(){
     }
 
     vector<int> out(n);
+
     stack<int> stack;
     for(int i=0;i<prices.size();i++){
         while(!stack.empty() && prices[stack.top()] <= prices[i]){
             stack.pop();
         }
+        int j;
+        if(stack.empty()){
+            // you could not find a day on the left of the ith day
+            // where price became greater
+            j = -1;
+        }
+        else{
+            // you found a day on which the price becomes greater
+            // than the price on ith day
+            j = stack.top();
+        }
 
-        out[i] = stack.empty() ? i-(-1) : i-stack.top();
+        //out[i] = stack.empty() ? i-(-1) : i-stack.top();
+        
         stack.push(i);
     }
 
