@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
- 
 /*
 Stack --Next Largest Element (Nearest Greater to Right) Problem : 
 
@@ -19,3 +16,41 @@ Approach:
     Using Stack :
         
 */
+
+
+// Method -1 (Brute Force)
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void printNextGreatest(int* a, int n){
+
+    int next;
+    for(int i=0;i<n;i++){
+
+        next = -1;
+        for(int j = i+1;j<n;j++){
+
+            // compare every element
+            // if we find any greater element on right then, initialize next with that value
+            if(a[i] < a[j]){
+                next = a[j];
+                break;
+            }
+        }
+        cout<<next<<" ";
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int* a = new int[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+
+    printNextGreatest(a,n);
+
+    return 0;
+}
