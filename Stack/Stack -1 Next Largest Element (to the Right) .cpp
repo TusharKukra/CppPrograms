@@ -57,3 +57,59 @@ int main(){
 
 
 // Method -2 (using Stack)
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void printNextGreatestUsingStack(int* a, int n){
+
+    stack<int> stack;
+
+    // firstly, push the first element to stack
+    stack.push(a[0]);
+
+    // then iterate for rest of the elements
+    for(int i = 1 ; i<n;i++){
+
+        if(stack.empty()){
+        stack.push(a[i]);
+        continue;
+    }
+
+    /* if stack is not empty, then pop an element from stack.
+        If the popped element is smaller than go to next, then
+        i). print the element
+        ii). keep popping while element are smaller & stack is not empty
+    */
+    while(stack.empty()== false && a[i] > stack.top() ){  // if stack is not empty & if the element we are on is greater than the top element of stack then print that element
+        
+        cout<<a[i]<<" ";
+        stack.pop();  // and then pop the top of stack and then stack top become that entered element i.e a[i]
+    } 
+
+    // push next to stack so that we can find next greater for it
+    stack.push(a[i]);
+
+    }
+
+    // if we cant find any greater element for the remaining elements, so print -1 for them
+    while(stack.empty() == false){
+        cout<<-1<<" ";
+
+        stack.pop();
+    }
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+    int* a = new int[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+
+    printNextGreatestUsingStack(a,n);
+
+    return 0;
+}
