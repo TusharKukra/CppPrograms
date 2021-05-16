@@ -54,3 +54,6 @@ int main(){
 
     return 0;
 }
+
+
+// Method -2 (using Stack)
