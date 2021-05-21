@@ -25,8 +25,8 @@ Sample Output
 
 // Code :
 
-    #include<bits/stdc++.h>
-    using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
     /*
     Aggressive Cow 
@@ -81,11 +81,10 @@ int minTimeToPaint(int K, int N, int* boardLengths){
             int N;
             cin>>N;
 
-            int* boardLengths = new int[K];
-            for(int i=0;i<K;i++){
+            int* boardLengths = new int[N];
+            for(int i=0;i<N;i++){
                 cin>>boardLengths[i];
             }
-            sort(boardLengths, boardLengths+K);
             cout<<minTimeToPaint(K,N,boardLengths)<<endl;
         
         return 0;
