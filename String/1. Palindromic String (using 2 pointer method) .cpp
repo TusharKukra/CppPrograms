@@ -11,6 +11,11 @@ bool isPalindromic(string a){
         if(a[start] != a[end]){
             return false;
         }
+        
+        // if want to remove case sensitivity then use this code:
+        // if(toupper(s[start]) != toupper(s[end])){
+           // return false;
+        // }
         start++, end--;
     }
     return true;
