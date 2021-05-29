@@ -5,8 +5,6 @@ using namespace std;
 
 string multiplyString(string num1, string num2){
 
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
         if(num1.size()==0||num2.size()==0) return "";
         string ret(num1.size()+num2.size()+1,'0');
         reverse(num1.begin(),num1.end());
