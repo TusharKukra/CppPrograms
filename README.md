@@ -1,7 +1,7 @@
 # C++ Programs
 
 ![GitHub top language](https://img.shields.io/github/languages/top/TusharKukra/CppPrograms)
-<br>
+&nbsp
 ![visitor badge](https://visitor-badge.glitch.me/badge?page_id=TusharKukra)
 <br>
 ![GitHub forks](https://img.shields.io/github/forks/TusharKukra/CppPrograms?style=social)
