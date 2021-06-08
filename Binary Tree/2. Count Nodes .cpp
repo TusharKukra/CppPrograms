@@ -36,6 +36,8 @@ node* createTree(){
 
     // now create right subtree  (using recursion)
     root->right = createTree();
+ 
+    return root;
 }
 
 void preOrder(node* root){
