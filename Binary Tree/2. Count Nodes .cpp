@@ -91,7 +91,7 @@ int numberOfNodes(node* root){
     // recursion
     // we use recursion to find nodes in left subtree and then in right subtree and then we can add them
 
-    return numberOfNodes(root->left) + numberOfNodes(root->right) + 1;
+    return numberOfNodes(root->left) + numberOfNodes(root->right) + 1;  // this is the post order bcoz: we worked on the left then right then root
 }
 
 /////////////////////////////////////////////////////////////////////////
