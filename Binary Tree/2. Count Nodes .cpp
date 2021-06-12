@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Binary Tree
+  
+// Binary Tree : 10 2 6 -1 -1 -1 5 8 -1 -1 7 9 -1 -1 -1
 
+// Create a node for Tree
 class node{
-
 public:
     int data;
     node* left;
@@ -14,103 +14,104 @@ public:
         data = d;
         left = right = NULL;
     }
-
 };
 
-// create Tree
+// Add element into Tree (using recursion)
 node* createTree(){
 
-    // enter data
     int data;
     cin>>data;
-    
-    if(data == -1){  // if tree is empty
+
+    // if no node is present
+    if(data == -1){  // in trees we use -1 to ensure that there is no node present (so we go back to root)
         return NULL;
     }
 
-    // create node
-    node* root = new node(data);
+    // else store data
+    node* root = new node(data);  // root node : root is the pointer to the object node.
 
-    // now first create left subtree  (using recursion)
-    root->left = createTree();
+    root->left = createTree(); // left subtree (root node of left subtree)
 
-    // now create right subtree  (using recursion)
-    root->right = createTree();
- 
+    root->right = createTree(); // right subtree (root node of right subtree)
+
     return root;
 }
 
+
+// Now we have to do Traversal of above Tree (Pre-Order, Post-Order, In-Order)
+
 void preOrder(node* root){
-    // base
-    if(root == NULL){
+
+    // base case :
+    if(root==NULL){
         return;
     }
 
-    // root left right
+    // else print : Root - Left - Right
     cout<<root->data<<" ";
-    preOrder(root-> left);
+    preOrder(root->left);
     preOrder(root->right);
-
-}
-
-void inOrder(node* root){
-    // base
-    if(root == NULL){
-        return;
-    }
-
-    // left root right
-    preOrder(root-> left);
-    cout<<root->data<<" ";
-    preOrder(root->right);
-
 }
 
 void postOrder(node* root){
-    // base
-    if(root == NULL){
+
+    // base case :
+    if(root==NULL){
         return;
     }
 
-    // left right root
-    preOrder(root-> left);
-    preOrder(root->right);
+    // else print : Left - Right - Root
+    postOrder(root->left);
+    postOrder(root->right);
     cout<<root->data<<" ";
-
-
 }
 
-////////////////////////////////////////////////////////////////////
+void inOrder(node* root){
 
-// Count Nodes : 
-int countNodes(node* root){
-
+    // base case :
     if(root==NULL){
+        return;
+    }
+
+    // else print : Left - Root - Right
+    inOrder(root->left);
+    cout<<root->data<<" ";
+    inOrder(root->right);
+}
+
+/////////////////////////////////////////////////////////////////////////
+// Count Nodes : 
+int numberOfNodes(node* root){
+
+    // base case:
+    if(root == NULL){
         return 0;
     }
 
-    return countNodes(root->left) + countNodes(root->right) + 1;  // Post Order : Left Right Root
-} 
+    // recursion
+    // we use recursion to find nodes in left subtree and then in right subtree and then we can add them
 
-////////////////////////////////////////////////////////////////////
+    return numberOfNodes(root->left) + numberOfNodes(root->right) + 1;
+}
+
+/////////////////////////////////////////////////////////////////////////
 
 
 int main(){
 
-    node* root = NULL;
-
+    node* root = NULL; 
+    
     root = createTree();
 
+    cout<<"Pre-Order Traversal: ";
     preOrder(root);
-    cout<<endl;
 
-    postOrder(root);
-    cout<<endl;
-
+    cout<<endl<<"In-Order Traversal: ";
     inOrder(root);
-    cout<<endl;
 
-    cout<<countNodes(root)<<endl;
+    cout<<endl<<"Post-Order Traversal: ";
+    postOrder(root);
 
+    cout<<endl<<"Number of Nodes : "<<numberOfNodes(root)<<endl;
     return 0;
 }
