@@ -155,7 +155,7 @@ Pair fastDiameter(node* root){
     Pair left = fastDiameter(root->left);
     Pair right = fastDiameter(root->right);
 
-    // To find height of the Tree.
+    // To find height of the Tree. 
     p.height = max(left.height, right.height) + 1;
 
     // To find the diameter of the Tree.
