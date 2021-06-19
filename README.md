@@ -1,4 +1,4 @@
-# C++ Programs
+# Data Structures in C++
 
 ![GitHub top language](https://img.shields.io/github/languages/top/TusharKukra/CppPrograms)
 &nbsp; ![GitHub forks](https://img.shields.io/github/forks/TusharKukra/CppPrograms?style=social)
